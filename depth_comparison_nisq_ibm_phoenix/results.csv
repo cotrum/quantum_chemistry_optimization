@@ -1,0 +1,57 @@
+case,family,paulis,num_logical,weight,circuit,stage,2q_depth,2q_count,gate_count,depth,meas_layers,measurements,if_else,active_qubits,gates
+Z2,Z-string,Z0 Z1,2,2,dynamic,untranspiled,6,6,14,16,4,4,4,3,h:8 cx:6 measure:4 if_else:4
+Z2,Z-string,Z0 Z1,2,2,dynamic,transpiled,6,6,34,33,4,4,4,3,rz:16 sx:12 cz:6 measure:4 if_else:4
+Z2,Z-string,Z0 Z1,2,2,ladder,untranspiled,1,1,1,1,0,0,0,2,rzz:1
+Z2,Z-string,Z0 Z1,2,2,ladder,transpiled,2,2,11,11,0,0,0,2,rz:5 sx:4 cz:2
+Z3,Z-string,Z0 Z1 Z2,3,3,dynamic,untranspiled,6,12,28,17,4,8,7,5,h:16 cx:12 measure:8 if_else:7
+Z3,Z-string,Z0 Z1 Z2,3,3,dynamic,transpiled,6,12,79,37,4,8,7,5,rz:37 sx:24 cz:12 measure:8 if_else:7 x:6
+Z3,Z-string,Z0 Z1 Z2,3,3,ladder,untranspiled,4,4,5,5,0,0,0,3,cx:4 rz:1
+Z3,Z-string,Z0 Z1 Z2,3,3,ladder,transpiled,4,4,22,17,0,0,0,3,rz:10 sx:8 cz:4
+Z4,Z-string,Z0 Z1 Z2 Z3,4,4,dynamic,untranspiled,6,18,42,18,4,12,10,7,h:24 cx:18 measure:12 if_else:10
+Z4,Z-string,Z0 Z1 Z2 Z3,4,4,dynamic,transpiled,6,18,103,38,4,12,10,7,rz:46 sx:36 cz:18 measure:12 if_else:10 x:3
+Z4,Z-string,Z0 Z1 Z2 Z3,4,4,ladder,untranspiled,6,6,7,7,0,0,0,4,cx:6 rz:1
+Z4,Z-string,Z0 Z1 Z2 Z3,4,4,ladder,transpiled,6,6,33,23,0,0,0,4,rz:15 sx:12 cz:6
+Z5,Z-string,Z0 Z1 Z2 Z3 Z4,5,5,dynamic,untranspiled,6,24,56,19,4,16,13,9,h:32 cx:24 measure:16 if_else:13
+Z5,Z-string,Z0 Z1 Z2 Z3 Z4,5,5,dynamic,transpiled,6,24,148,39,4,16,13,9,rz:67 sx:48 cz:24 measure:16 if_else:13 x:9
+Z5,Z-string,Z0 Z1 Z2 Z3 Z4,5,5,ladder,untranspiled,8,8,9,9,0,0,0,5,cx:8 rz:1
+Z5,Z-string,Z0 Z1 Z2 Z3 Z4,5,5,ladder,transpiled,8,8,44,29,0,0,0,5,rz:20 sx:16 cz:8
+Z6,Z-string,Z0 Z1 Z2 Z3 Z4 Z5,6,6,dynamic,untranspiled,6,30,70,20,4,20,16,11,h:40 cx:30 measure:20 if_else:16
+Z6,Z-string,Z0 Z1 Z2 Z3 Z4 Z5,6,6,dynamic,transpiled,6,30,168,37,4,20,16,11,rz:74 sx:60 cz:30 measure:20 if_else:16 x:4
+Z6,Z-string,Z0 Z1 Z2 Z3 Z4 Z5,6,6,ladder,untranspiled,10,10,11,11,0,0,0,6,cx:10 rz:1
+Z6,Z-string,Z0 Z1 Z2 Z3 Z4 Z5,6,6,ladder,transpiled,10,10,55,35,0,0,0,6,rz:25 sx:20 cz:10
+Z8,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7,8,8,dynamic,untranspiled,6,42,98,22,4,28,22,15,h:56 cx:42 measure:28 if_else:22
+Z8,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7,8,8,dynamic,transpiled,6,42,237,42,4,28,22,15,rz:104 sx:84 cz:42 measure:28 if_else:22 x:7
+Z8,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7,8,8,ladder,untranspiled,14,14,15,15,0,0,0,8,cx:14 rz:1
+Z8,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7,8,8,ladder,transpiled,14,14,77,47,0,0,0,8,rz:35 sx:28 cz:14
+Z10,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9,10,10,dynamic,untranspiled,6,54,126,24,4,36,28,19,h:72 cx:54 measure:36 if_else:28
+Z10,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9,10,10,dynamic,transpiled,6,54,299,44,4,36,28,19,rz:130 sx:108 cz:54 measure:36 if_else:28 x:7
+Z10,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9,10,10,ladder,untranspiled,18,18,19,19,0,0,0,10,cx:18 rz:1
+Z10,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9,10,10,ladder,transpiled,18,18,99,59,0,0,0,10,rz:45 sx:36 cz:18
+Z12,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11,12,12,dynamic,untranspiled,6,66,154,25,4,44,34,23,h:88 cx:66 measure:44 if_else:34
+Z12,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11,12,12,dynamic,transpiled,6,66,382,45,4,44,34,23,rz:168 sx:132 cz:66 measure:44 if_else:34 x:16
+Z12,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11,12,12,ladder,untranspiled,22,22,23,23,0,0,0,12,cx:22 rz:1
+Z12,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11,12,12,ladder,transpiled,22,22,121,71,0,0,0,12,rz:55 sx:44 cz:22
+Z16,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 Z12 Z13 Z14 Z15,16,16,dynamic,untranspiled,6,90,210,29,4,60,46,31,h:120 cx:90 measure:60 if_else:46
+Z16,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 Z12 Z13 Z14 Z15,16,16,dynamic,transpiled,6,90,499,49,4,60,46,31,rz:216 sx:180 cz:90 measure:60 if_else:46 x:13
+Z16,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 Z12 Z13 Z14 Z15,16,16,ladder,untranspiled,30,30,31,31,0,0,0,16,cx:30 rz:1
+Z16,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 Z12 Z13 Z14 Z15,16,16,ladder,transpiled,30,30,165,95,0,0,0,16,rz:75 sx:60 cz:30
+Z20,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 Z12 Z13 Z14 Z15 Z16 Z17 Z18 Z19,20,20,dynamic,untranspiled,6,114,266,33,4,76,58,39,h:152 cx:114 measure:76 if_else:58
+Z20,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 Z12 Z13 Z14 Z15 Z16 Z17 Z18 Z19,20,20,dynamic,transpiled,6,114,651,53,4,76,58,39,rz:284 sx:228 cz:114 measure:76 if_else:58 x:25
+Z20,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 Z12 Z13 Z14 Z15 Z16 Z17 Z18 Z19,20,20,ladder,untranspiled,38,38,39,39,0,0,0,20,cx:38 rz:1
+Z20,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 Z12 Z13 Z14 Z15 Z16 Z17 Z18 Z19,20,20,ladder,transpiled,38,38,209,119,0,0,0,20,rz:95 sx:76 cz:38
+Z25,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 Z12 Z13 Z14 Z15 Z16 Z17 Z18 Z19 Z20 Z21 Z22 Z23 Z24,25,25,dynamic,untranspiled,6,144,336,38,4,96,73,49,h:192 cx:144 measure:96 if_else:73
+Z25,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 Z12 Z13 Z14 Z15 Z16 Z17 Z18 Z19 Z20 Z21 Z22 Z23 Z24,25,25,dynamic,transpiled,6,144,823,58,4,96,73,49,rz:359 sx:288 cz:144 measure:96 if_else:73 x:32
+Z25,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 Z12 Z13 Z14 Z15 Z16 Z17 Z18 Z19 Z20 Z21 Z22 Z23 Z24,25,25,ladder,untranspiled,48,48,49,49,0,0,0,25,cx:48 rz:1
+Z25,Z-string,Z0 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 Z12 Z13 Z14 Z15 Z16 Z17 Z18 Z19 Z20 Z21 Z22 Z23 Z24,25,25,ladder,transpiled,48,48,264,149,0,0,0,25,rz:120 sx:96 cz:48
+XYZXYZXY,mixed,Y0 X1 Z2 Y3 X4 Z5 Y6 X7,8,8,dynamic,untranspiled,6,42,116,26,4,28,23,15,h:68 cx:42 measure:28 if_else:23 sdg:3 s:3
+XYZXYZXY,mixed,Y0 X1 Z2 Y3 X4 Z5 Y6 X7,8,8,dynamic,transpiled,6,42,214,41,4,28,23,15,rz:93 sx:76 cz:42 measure:28 if_else:23 x:3
+XYZXYZXY,mixed,Y0 X1 Z2 Y3 X4 Z5 Y6 X7,8,8,ladder,untranspiled,14,14,27,17,0,0,0,8,cx:14 h:6 sx:3 sxdg:3 rz:1
+XYZXYZXY,mixed,Y0 X1 Z2 Y3 X4 Z5 Y6 X7,8,8,ladder,transpiled,14,14,74,49,0,0,0,8,rz:34 sx:26 cz:14
+ZIIXIYIZ_gapped,gapped (identity padding),Z0 Y2 X4 Z7,8,4,dynamic,untranspiled,6,54,132,21,4,36,22,19,h:76 cx:54 measure:36 if_else:22 sdg:1 s:1
+ZIIXIYIZ_gapped,gapped (identity padding),Z0 Y2 X4 Z7,8,4,dynamic,transpiled,6,54,309,36,4,36,22,19,rz:136 sx:104 cz:54 measure:36 if_else:22 x:15
+ZIIXIYIZ_gapped,gapped (identity padding),Z0 Y2 X4 Z7,8,4,ladder,untranspiled,6,6,11,9,0,0,0,4,cx:6 h:2 sx:1 rz:1 sxdg:1
+ZIIXIYIZ_gapped,gapped (identity padding),Z0 Y2 X4 Z7,8,4,ladder,transpiled,6,6,31,20,0,0,0,4,rz:13 sx:10 cz:6 x:2
+XZZZX+YZZZY,2-term product,X0 Z1 Z2 Z3 X4 · Y0 Z1 Z2 Z3 Y4,5,5,dynamic,untranspiled,12,48,124,34,8,32,15,9,h:72 cx:48 measure:32 if_else:15 sdg:2 s:2
+XZZZX+YZZZY,2-term product,X0 Z1 Z2 Z3 X4 · Y0 Z1 Z2 Z3 Y4,5,5,dynamic,transpiled,12,48,251,67,8,32,15,9,rz:108 sx:89 cz:48 measure:32 if_else:15 x:6
+XZZZX+YZZZY,2-term product,X0 Z1 Z2 Z3 X4 · Y0 Z1 Z2 Z3 Y4,5,5,ladder,untranspiled,16,16,26,22,0,0,0,5,cx:16 h:4 rz:2 sx:2 sxdg:2
+XZZZX+YZZZY,2-term product,X0 Z1 Z2 Z3 X4 · Y0 Z1 Z2 Z3 Y4,5,5,ladder,transpiled,15,15,75,51,0,0,0,5,rz:30 sx:28 cz:15 x:2
