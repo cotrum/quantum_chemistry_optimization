@@ -1,0 +1,23 @@
+{
+  "star": {
+    "branch_column_checks": 2156,
+    "max_amplitude_error": 4.440892098500626e-16
+  },
+  "compressed_blocks": {
+    "column_checks": 7168,
+    "max_amplitude_error": 0.0,
+    "limitation": "Inner root rotation is ideal; routing and dynamic implementation are not tested."
+  },
+  "shared_pair": {
+    "column_checks": 96,
+    "max_amplitude_error": 0.0,
+    "limitation": "The two-qubit core is exact here; a native KAK decomposition is not tested."
+  },
+  "phase_diagnostic": {
+    "probability_difference": 0.0,
+    "positive_angle_yxxxx": -0.7173560908995228,
+    "negative_angle_yxxxx": 0.7173560908995228,
+    "predicted_positive": -0.7173560908995228
+  },
+  "status": "passed"
+}

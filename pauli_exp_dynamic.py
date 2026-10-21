@@ -774,12 +774,17 @@ class DynamicPauliProgram:
 
     def finalize(self) -> "DynamicPauliProgram":
         if not self._finalized:
+            # Keep a terminal-readout view before materializing the reusable
+            # circuit's data corrections and helper cleanup.
+            self._terminal_ops_count = len(self.ops)
+            self._terminal_fx, self._terminal_fz = dict(self.fx), dict(self.fz)
             self._flush(list(self.fx) + list(self.fz))
             self._finalized = True
         return self
 
     # -- Qiskit export -----------------------------------------------------
-    def to_qiskit(self, prep=None, post=None, measure: bool = False, name: str = "pauli_exp_dynamic"):
+    def to_qiskit(self, prep=None, post=None, measure: bool = False, name: str = "pauli_exp_dynamic",
+                  terminal_frame: bool = False):
         """Return a qiskit QuantumCircuit on all device qubits.
 
         prep:    optional QuantumCircuit on ``num_logical`` qubits, prepended onto
@@ -788,6 +793,10 @@ class DynamicPauliProgram:
                  the exponentials (e.g. basis rotations before readout).
         measure: append a Z measurement of every logical qubit into register "meas"
                  (bit j = logical qubit j).
+        terminal_frame: omit final physical corrections/cleanup, requiring
+                 measure=True and a Clifford post circuit. Correct each shot's
+                 meas bits with metadata["readout_flip_masks"] and its own mid
+                 bits. This mode does not return helpers physically to zero.
         Transpile with ``initial_layout=list(range(backend.num_qubits))``: every
         two-qubit gate is already on a coupler, so no SWAPs are needed.
         """
@@ -795,6 +804,23 @@ class DynamicPauliProgram:
         from qiskit.circuit.classical import expr
 
         self.finalize()
+        if terminal_frame and not measure:
+            raise ValueError("terminal_frame requires terminal measurement")
+        masks = [0] * self.layout.num_logical
+        if terminal_frame:
+            from qiskit.quantum_info import Clifford, Pauli
+            clifford = Clifford(post) if post is not None else None
+            for bit in range(self.num_bits):
+                x = [bool(self._terminal_fx.get(q, 0) & (1 << bit))
+                     for q in self.layout.physical_qubits]
+                z = [bool(self._terminal_fz.get(q, 0) & (1 << bit))
+                     for q in self.layout.physical_qubits]
+                frame = Pauli((z, x))
+                if clifford is not None:
+                    frame = frame.evolve(clifford, frame="s")
+                for j, flip in enumerate(frame.x):
+                    if flip:
+                        masks[j] |= 1 << bit
         qr = QuantumRegister(self.device.num_qubits, "q")
         qc = QuantumCircuit(qr, name=name)
         if self.num_bits:
@@ -814,7 +840,8 @@ class DynamicPauliProgram:
         data = [qr[p] for p in self.layout.physical_qubits]
         if prep is not None:
             qc.compose(prep, qubits=data, inplace=True)
-        for op in self.ops:
+        ops = self.ops[:self._terminal_ops_count] if terminal_frame else self.ops
+        for op in ops:
             kind = op[0]
             if kind in ("h", "s", "sdg", "x", "z"):
                 getattr(qc, kind)(qr[op[1]])
@@ -849,6 +876,8 @@ class DynamicPauliProgram:
             "terms": [[" ".join(f"{v}{k}" for k, v in sorted(t.items())) or "I", float(th)]
                       for t, th in self.terms],
             "corrections": self.corrections,
+            "terminal_frame": terminal_frame,
+            "readout_flip_masks": masks,
         }
         return qc
 
