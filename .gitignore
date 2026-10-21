@@ -1,0 +1,4 @@
+# Generated detailed plots; the scripts regenerate these locally.
+**/circuits/*.png
+**/figures/**/*.png
+**/layouts/*.png
