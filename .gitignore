@@ -2,3 +2,7 @@
 **/circuits/*.png
 **/figures/**/*.png
 **/layouts/*.png
+
+# Python bytecode.
+__pycache__/
+*.pyc
